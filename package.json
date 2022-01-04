@@ -53,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@types/ramda": "^0.27.62",
     "craco-alias": "^3.0.1"
   }
 }

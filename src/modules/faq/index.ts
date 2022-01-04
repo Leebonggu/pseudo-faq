@@ -1,17 +1,46 @@
-import { ActionType } from '@typings/index'
+import * as λ from 'ramda';
+import { FAQCategoryType, FAQTabType } from "@typings/index";
 
-export const initialState = {};
+type FAQState = {
+  faq_list: FAQCategoryType;
+  faq_tab_list: FAQTabType[];
+  initial_tab: number;
+  dummy: number;
+};
 
-export const GET_FAQ_LIST = '@@faq/GET_FAQ_LIST';
-export const getFaqList = (id: number) => ({ type: GET_FAQ_LIST, payload: id })
+export const initialState: FAQState = {
+  faq_list: {
+    id: '',
+    title: '',
+    contents: [],
+  },
+  faq_tab_list: [],
+  initial_tab: 1,
+  dummy: 1,
+};
 
-const reducer = (state = initialState, action: ActionType) => {
+export const INITIALIZE_FAQ_LIST = '@@faq/INITIALIZE_FAQ_LIST';
+export const initializeFaqData = () => ({ type: INITIALIZE_FAQ_LIST });
+
+export const UPDATE_FAQ_TAB = '@@faq/UPDATE_FAQ_TAB';
+export const updateFaqList = (faq_list: FAQCategoryType) => ({ type: UPDATE_FAQ_TAB, payload: { faq_list } });
+
+export const UPDATE_FAQ_LIST = '@@faq/UPDATE_FAQ_LIST';
+export const updateFaqTab = (faq_tab_list: FAQTabType[]) => ({ type: UPDATE_FAQ_LIST, payload: { faq_tab_list } });
+
+export const CHANGE_TAB = '@@faq/CHANGE_TAB';
+export const changeTab = (tabNumber: number) => ({ type: CHANGE_TAB, payload: { initial_tab: tabNumber }});
+
+
+const reducer = (state = initialState, action: Record<string, Partial<FAQState>>): FAQState => {
   switch (action.type) {
-    case GET_FAQ_LIST:
-      return action.payload;
+    case UPDATE_FAQ_LIST:
+    case UPDATE_FAQ_TAB:
+    case CHANGE_TAB:
+      return λ.mergeRight(state, action.payload) 
     default:
       return state;
   }
-}
+};
 
 export default reducer;

@@ -1,11 +1,5 @@
-import React from 'react'
-
 function FAQPages() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return null;
 }
 
 export default FAQPages;
