@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-empty-function
 
 import * as λ from 'ramda'
-import { takeEvery, delay, put, call } from "redux-saga/effects";
+import { takeEvery, delay, put } from "redux-saga/effects";
 import { ActionType } from "@typings/index";
 import { CHANGE_TAB, INITIALIZE_FAQ_LIST, updateFaqList, updateFaqTab, UPDATE_FAQ_TAB } from ".";
 import { categories } from "@lib/mock/faq";
