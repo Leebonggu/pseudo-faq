@@ -1,0 +1,16 @@
+{
+	"Import Ramda": {
+		"prefix": "ird",
+		"body": [
+			"import * as λ from 'ramda'",
+		],
+		"description": "람다를 람다기호로 가져오자"
+	},
+	"Use Ramda Sign": {
+		"prefix": "rd",
+		"body": [
+			"λ"
+		],
+		"description": "rd로 람다 기호를 쓰자"
+	}
+}
