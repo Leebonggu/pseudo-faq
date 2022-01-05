@@ -12,6 +12,9 @@ import {
   AuthItem,
 } from './Header.style';
 
+console.log(4)
+console.log(5)
+
 function Header() {
   return (
     <HeaderContainer>
