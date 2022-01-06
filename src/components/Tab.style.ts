@@ -10,8 +10,8 @@ export const FaqTab = styled.div<SelectProps>`
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 1px solid black;
   cursor: pointer;
+  border: ${props => props.selected ? '1px solid black' : ''};
   color: ${props => props.selected ? 'black' : '#24242480'};
 `;
 
