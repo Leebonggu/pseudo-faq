@@ -16,3 +16,8 @@
 ## Mirage
 
 - saga에서 데이터 받는 작업을 mock server를 통해 넘겨주는 방식으로 변경해보기
+
+
+## 현시점 부족한점
+
+- typescript -> react event handler type / props function type defintion
