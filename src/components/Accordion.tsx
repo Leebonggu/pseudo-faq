@@ -20,7 +20,7 @@ function Accordion(props: AccordionProps) {
           <AiFillCaretUp />
         </IconWrapper>
       </Container>
-      {selected && <AccodianContents>{chidlren}</AccodianContents>}
+      {<AccodianContents display={selected}>{chidlren}</AccodianContents>}
     </>
   );
 }
