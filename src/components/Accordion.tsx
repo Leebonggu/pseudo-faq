@@ -10,15 +10,15 @@ function Accordion(props: AccordionProps) {
   const { chidlren } = props;
   return (
     <>
-    <Container>
-      <AccodianTitle>title</AccodianTitle>
-      <IconWrapper selected={false}>
-        <AiFillCaretUp />
-      </IconWrapper>
-    </Container>
-    <AccodianContents>
-      {chidlren}
-    </AccodianContents>
+      <Container>
+        <AccodianTitle>title</AccodianTitle>
+        <IconWrapper selected={false}>
+          <AiFillCaretUp />
+        </IconWrapper>
+      </Container>
+      <AccodianContents>
+        {chidlren}
+      </AccodianContents>
     </>
   );
 }

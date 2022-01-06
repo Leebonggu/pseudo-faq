@@ -5,7 +5,7 @@ export type ActionType = {
 }
 
 export interface FAQTabType {
-  id: string | number
+  id: number
   title: string
 }
 export interface FAQContentType {

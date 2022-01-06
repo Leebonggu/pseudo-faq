@@ -4,7 +4,7 @@ import { FAQCategoryType, FAQTabType } from "@typings/index";
 type FAQState = {
   faq_list: FAQCategoryType;
   faq_tab_list: FAQTabType[];
-  initial_tab: number;
+  tab: number;
   dummy: number;
 };
 
@@ -15,7 +15,7 @@ export const initialState: FAQState = {
     contents: [],
   },
   faq_tab_list: [],
-  initial_tab: 1,
+  tab: 1,
   dummy: 1,
 };
 
@@ -29,7 +29,7 @@ export const UPDATE_FAQ_LIST = '@@faq/UPDATE_FAQ_LIST';
 export const updateFaqTab = (faq_tab_list: FAQTabType[]) => ({ type: UPDATE_FAQ_LIST, payload: { faq_tab_list } });
 
 export const CHANGE_TAB = '@@faq/CHANGE_TAB';
-export const changeTab = (tabNumber: number) => ({ type: CHANGE_TAB, payload: { initial_tab: tabNumber }});
+export const changeTab = (tabNumber: number) => ({ type: CHANGE_TAB, payload: { tab: tabNumber }});
 
 
 const reducer = (state = initialState, action: Record<string, Partial<FAQState>>): FAQState => {
