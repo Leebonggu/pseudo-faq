@@ -13,6 +13,9 @@ export const Container = styled.div<SelectProps>`
   justify-content: space-between;
   border-bottom: 1px solid #efefef;
   color: ${props => props.selected ? '#24242480' : '#242424'};
+  cursor: pointer;
+  /* transition: height 0.25s linear; */
+
 `;
 
 export const AccodianTitle = styled.h2`
@@ -24,12 +27,15 @@ export const AccodianTitle = styled.h2`
   letter-spacing: -0.15px;
 `;
 
-export const AccodianContents = styled.div``;
+export const AccodianContents = styled.div<{display: boolean}>`
+  margin: 30px 0;
+  /* TODO: transition */
+`;
 
 export const IconWrapper = styled.span<SelectProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   transform: ${props => props.selected ? 'rotate(180deg)' : ''};
-  transition: 300ms ease all;
+  transition: all 300ms ease-out;
 `;

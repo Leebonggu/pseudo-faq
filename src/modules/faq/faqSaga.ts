@@ -23,8 +23,11 @@ function* updateFaqTabListSaga() {
   yield put(updateFaqTab(tabListData));
 }
 
-function* updateFaqListSaga(action: ActionType) {
-  yield console.log(action);
+type TabType = { tab: number }
+function* updateFaqListSaga(action: ActionType & { payload: TabType }) {
+  const { tab } = action.payload;
+  const [filtered] = λ.filter(category => category.id === tab, categories);
+  yield put(updateFaqList(filtered))
 }
 
 function* faqSaga() {
