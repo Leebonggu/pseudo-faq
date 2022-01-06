@@ -4,21 +4,23 @@ import { Container, IconWrapper, AccodianTitle, AccodianContents } from './Accor
 
 interface AccordionProps {
   chidlren?: ReactNode;
+  summary: string;
+  selected: boolean;
+  onClick: (value: number) => void;
+  value: number | string;
 }
 
 function Accordion(props: AccordionProps) {
-  const { chidlren } = props;
+  const { chidlren, summary, selected, onClick, value } = props;
   return (
     <>
-      <Container>
-        <AccodianTitle>title</AccodianTitle>
-        <IconWrapper selected={false}>
+      <Container onClick={() => onClick(Number(value))}>
+        <AccodianTitle>{summary}</AccodianTitle>
+        <IconWrapper selected={selected}>
           <AiFillCaretUp />
         </IconWrapper>
       </Container>
-      <AccodianContents>
-        {chidlren}
-      </AccodianContents>
+      {selected && <AccodianContents>{chidlren}</AccodianContents>}
     </>
   );
 }
